@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/ChallengeApp/ConsoleApp1/ConsoleApp1.csproj
