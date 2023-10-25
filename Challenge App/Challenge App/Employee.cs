@@ -15,19 +15,38 @@ namespace Challenge_App
         public string Name { get; private set; }
         public string Surname { get; private set; }
         public int Age { get;private set; }
-        public int Result
+        public float Result
         {
             get
             {
-                return score.Sum();
+                return grades.Sum();
             }
         }
-        public List<int> score = new List<int>();
+        private List<float> grades = new List<float>();
       
 
-        public void AddScore(int number)
+        public void AddGrade(float grade)
         {
-            this.score.Add(number);
+            this.grades.Add(grade);
+        }
+
+        public Statistics GetStatistics()
+        {
+            var statistiscs =  new Statistics();
+            statistiscs.Average = 0;
+            statistiscs.Max = float.MinValue;
+            statistiscs.Min = float.MaxValue;           
+
+            foreach (var grade in this.grades)
+            {
+                statistiscs.Max = Math.Max(statistiscs.Max, grade);
+                statistiscs.Min = Math.Min(statistiscs.Min, grade);
+                statistiscs.Average += grade;
+            }
+
+            statistiscs.Average = statistiscs.Average / this.grades.Count;
+
+            return statistiscs;
         }
 
     }

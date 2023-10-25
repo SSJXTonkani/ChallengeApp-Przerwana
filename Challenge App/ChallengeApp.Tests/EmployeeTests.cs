@@ -6,6 +6,54 @@ namespace ChallengeApp.Tests
     public class TypeTests
     {
         [Test]
+        public void TestOfStatisticsAverage()
+        {
+
+            //Arrange
+            var employee = new Employee("Helena", "ze sparty", 21);
+            employee.AddGrade(13);
+            employee.AddGrade(12);
+            employee.AddGrade(13);
+            employee.AddGrade(23);
+            //Act
+            var statistics = employee.GetStatistics();
+            //Assert
+            Assert.AreEqual((15.25) ,statistics.Average);
+           
+        }
+        [Test]
+        public void TestOfStatisticsMaxValue()
+        {
+
+            //Arrange
+            var employee = new Employee("Helena", "ze sparty", 21);
+            employee.AddGrade(13);
+            employee.AddGrade(12);
+            employee.AddGrade(13);
+            employee.AddGrade(23);
+            //Act
+            var statistics = employee.GetStatistics();
+            //Assert
+            Assert.AreEqual(23, statistics.Max);
+
+        }
+        [Test]
+        public void TestOfStatisticsMinValue()
+        {
+
+            //Arrange
+            var employee = new Employee("Helena", "ze sparty",21);
+            employee.AddGrade(13);
+            employee.AddGrade(12);
+            employee.AddGrade(13);
+            employee.AddGrade(23);
+            //Act
+            var statistics = employee.GetStatistics();
+            //Assert
+            Assert.AreEqual(12, statistics.Min);
+
+        }
+        [Test]
         public void TwoStringsAreEqual()
         {
 
