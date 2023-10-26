@@ -2,11 +2,11 @@
 
 
 Employee employee = new Employee("Paulina", "Kowalska", 22);
-employee.AddGrade(19);
-employee.AddGrade(8);
+employee.AddGrade(10000);
+employee.AddGrade("khutaz");
 employee.AddGrade(4);
-employee.AddGrade(123);
-employee.AddGrade(4);
+employee.AddGrade("99");
+employee.AddGrade(6);
 var statistics = employee.GetStatistics();
 
 
