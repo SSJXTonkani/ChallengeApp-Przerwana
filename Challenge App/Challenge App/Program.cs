@@ -13,9 +13,9 @@ var statistics2 = employee.GetStatisticsWithForeach();
 var statistics3 = employee.GetStatisticsWithWhile();
 var statistics4 = employee.GetStatisticsWithDoWhile();
 
-Console.WriteLine($"GetStatistics: Max Value: {statistics1.Max}, Min Value: {statistics1.Min} Average: {statistics1.Average}");
-Console.WriteLine($"GetStatistics: Max Value: {statistics2.Max}, Min Value: {statistics2.Min} Average: {statistics2.Average}");
-Console.WriteLine($"GetStatistics: Max Value: {statistics3.Max}, Min Value: {statistics3.Min} Average: {statistics3.Average}");
-Console.WriteLine($"GetStatistics: Max Value: {statistics4.Max}, Min Value: {statistics4.Min} Average: {statistics4.Average}");
+Console.WriteLine($"GetStatisticsWithFor: Max Value: {statistics1.Max}, Min Value: {statistics1.Min} Average: {statistics1.Average}");
+Console.WriteLine($"GetStatisticsWithForeach: Max Value: {statistics2.Max}, Min Value: {statistics2.Min} Average: {statistics2.Average}");
+Console.WriteLine($"GetStatisticsWithWhile: Max Value: {statistics3.Max}, Min Value: {statistics3.Min} Average: {statistics3.Average}");
+Console.WriteLine($"GetStatisticsWithDoWhile: Max Value: {statistics4.Max}, Min Value: {statistics4.Min} Average: {statistics4.Average}");
 
 //Console.WriteLine($"Average: {statistics.Average:N2} Min: {statistics.Min} Max: {statistics.Max}");
