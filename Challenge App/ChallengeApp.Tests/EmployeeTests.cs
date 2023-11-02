@@ -1,117 +1,57 @@
 
 using Challenge_App;
 
+
 namespace ChallengeApp.Tests
 {
     public class TypeTests
     {
         [Test]
-        public void TestOfStatisticsAverage()
+        public void GradeAsLetterIsEqualToMaxPoints()
         {
 
-            //Arrange
-            var employee = new Employee("Helena", "ze sparty", 21);
-            employee.AddGrade(13);
-            employee.AddGrade(12);
-            employee.AddGrade(13);
-            employee.AddGrade(23);
-            //Act
+            var employee = new Employee("jacek", "wafel", 29);
+            employee.AddGrade('A');
+            employee.AddGrade(70);
+            employee.AddGrade(66);
+            employee.AddGrade(29);
+
             var statistics = employee.GetStatistics();
-            //Assert
-            Assert.AreEqual((15.25) ,statistics.Average);
-           
+
+            Assert.AreEqual(100, statistics.Max);
+            
         }
         [Test]
-        public void TestOfStatisticsMaxValue()
+        public void GradeAsLetterIsEqualToMinPoints()
         {
 
-            //Arrange
-            var employee = new Employee("Helena", "ze sparty", 21);
-            employee.AddGrade(13);
-            employee.AddGrade(12);
-            employee.AddGrade(13);
-            employee.AddGrade(23);
-            //Act
+            var employee = new Employee("jacek", "wafel", 29);
+            employee.AddGrade('A');
+            employee.AddGrade(70);
+            employee.AddGrade(66);
+            employee.AddGrade('E');
+
             var statistics = employee.GetStatistics();
-            //Assert
-            Assert.AreEqual(23, statistics.Max);
+
+            Assert.AreEqual(20, statistics.Min);
 
         }
         [Test]
-        public void TestOfStatisticsMinValue()
+        public void GradeAsLetterIsEqualToAveragePoints()
         {
 
-            //Arrange
-            var employee = new Employee("Helena", "ze sparty",21);
-            employee.AddGrade(13);
-            employee.AddGrade(12);
-            employee.AddGrade(13);
-            employee.AddGrade(23);
-            //Act
+            var employee = new Employee("jacek", "wafel", 29);
+            employee.AddGrade('A');
+            employee.AddGrade('A');
+            employee.AddGrade('C');
+            employee.AddGrade('E');
+
             var statistics = employee.GetStatistics();
-            //Assert
-            Assert.AreEqual(12, statistics.Min);
 
-        }
-        [Test]
-        public void TwoStringsAreEqual()
-        {
+            Assert.AreEqual(70, statistics.Average);
 
-            //Arrange
-            string name1 = ("Helena ze sparty");
-            string name2 = ("Helena ze sparty");
-            //Act
-
-            //Assert
-            Assert.AreEqual(name1, name2);
-
-        }
-        [Test]
-        public void TwoNumbersFloatAreEqual()
-        {
-
-            //Arrange
-            float number1 = 1f;
-            float number2 = 1f;
-            //Act
-
-            //Assert
-            Assert.AreEqual(number1, number2);
-
-        }
-        [Test]
-        public void TwoNumbersIntAreEqual()
-        {
-
-            //Arrange
-            int number1 = 1;
-            int number2 = 1;
-            //Act
-
-            //Assert
-            Assert.AreEqual(number1, number2);
-
-        }
-        [Test]
-        public void TwoEmployeesShouldNotEqual()
-        {
-
-            //Arrange
-            var Employee1 = GetEmployee("adam", "kowal", 22);
-            var Employee2 = GetEmployee("Wera", "od aspargera", 19);
-            //Act
-
-            //Assert
-            Assert.AreNotEqual(Employee1, Employee2);
-
-        }
-
-        private Employee GetEmployee(string name, string surname, int age)
-        {
-            return new Employee(name, surname, age);
         }
     }
 }
-
 
 
